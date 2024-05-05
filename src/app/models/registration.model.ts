@@ -3,12 +3,13 @@ export interface ProfileType {
     code: string,
 }
 
-export interface Profile {
-    profileId: number,
+export interface UserInfo {
+    id: number,
 	onBehalfOf: string,
 	name: string,
+	firstName: string,
+	password: string,
 	education: string,
-	age: number,
     dob: string,
     
     marritalStatus: string,
@@ -31,4 +32,6 @@ export interface Profile {
 	mobile: string,
 	email: string,
 	details: string,
+	roles: string,
+	gender: string,
 }
