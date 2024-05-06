@@ -28,7 +28,6 @@ import { MoreInfoComponent } from './more-info/more-info.component';
   ],
 })
 export class RegistrationComponent implements OnInit {
-  myFormBasicInfo!: FormGroup;
   userInfo: UserInfo = {
     id: 0,
     name: 'bala.in@gmail.com',

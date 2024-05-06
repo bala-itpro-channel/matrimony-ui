@@ -1,0 +1,20 @@
+:host ::ng-deep {
+    .marrital-status .p-selectbutton {
+            min-width: 300px;
+        display: flex !important;
+        
+        .p-button-label {
+            font-size: 10px;
+
+        }
+    }
+    .p-datepicker-trigger {
+        background: #1b5752 !important;
+    }
+}
+
+.container {
+    display: grid !important;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+}

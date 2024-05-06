@@ -1,3 +1,32 @@
-<div formGroupName="moreInfo">
-    <input type="text" formControlName="houseName" />
+<div formGroupName="moreInfo" class="container card p-fluid flex flex-wrap gap-3">
+    <div class="flex-auto">
+        <span class="font-bold block mb-2">House Name</span>
+        <input type="text" pInputText formControlName="houseName" />
+    </div>
+    <div class="flex-auto">
+        <span class="font-bold block mb-2">Temple Name</span>
+        <input type="text" pInputText formControlName="temple" />
+    </div>
+    <div class="flex-auto">
+        <span class="font-bold block mb-2">Dosham</span>
+        <p-multiSelect 
+            [options]="doshams" 
+            formControlName="dosham" 
+            placeholder="Select Dosham"
+            optionLabel="name" 
+            display="chip" 
+            [showClear]="true" />
+    </div>
+    <div class="flex-auto">
+        <span class="font-bold block mb-2">Female God</span>
+        <input type="text" pInputText formControlName="houseName" />
+    </div>
+    <div class="flex-auto">
+        <span class="font-bold block mb-2">Native place</span>
+        <input type="text" pInputText formControlName="temple" />
+    </div>
+    <div class="flex-auto">
+        <span class="font-bold block mb-2">Current place</span>
+        <input type="text" pInputText formControlName="houseName" />
+    </div>
 </div>

@@ -1,11 +1,22 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { ControlContainer, FormControl, FormGroup, FormGroupDirective, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserInfo } from '../../../models/registration.model';
-
+import { InputTextModule } from 'primeng/inputtext';
+import { InputMaskModule } from 'primeng/inputmask';
+import { PasswordModule } from 'primeng/password';
+import { SelectButtonModule } from 'primeng/selectbutton';
+import { CalendarModule } from 'primeng/calendar';
 @Component({
   selector: 'app-basic-info',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [
+    ReactiveFormsModule,
+    InputTextModule,
+    InputMaskModule,
+    PasswordModule,
+    SelectButtonModule,
+    CalendarModule,
+  ],
   templateUrl: './basic-info.component.html',
   styleUrl: './basic-info.component.scss',
   viewProviders: [
@@ -16,11 +27,17 @@ import { UserInfo } from '../../../models/registration.model';
 export class BasicInfoComponent {
   @Input() userInfo!: UserInfo;
   childForm!: FormGroup;
+  marritalStatusOption: any[] = [
+    { label: 'Never Married', value: 'Never Married' },
+    { label: 'Widowed', value: 'Widowed' },
+    { label: 'Divorced', value: 'Divorced' },
+    { label: 'Awaiting divorce', value: 'Awaiting divorce' },
+  ];
+
   constructor(public parentForm: FormGroupDirective) {}
 
   ngOnInit(): void {
     this.childForm = this.parentForm.form;
-    if (this.userInfo) {
       this.childForm.addControl(
         'basicInfo',
         new FormGroup({
@@ -33,6 +50,10 @@ export class BasicInfoComponent {
           email: new FormControl(this.userInfo.email, Validators.required),
           password: new FormControl('', Validators.required),
           name: new FormControl(this.userInfo.name, Validators.required),
+          firstName: new FormControl(
+            this.userInfo.firstName,
+            Validators.required
+          ),
           marritalStatus: new FormControl(
             this.userInfo.marritalStatus,
             Validators.required
@@ -55,6 +76,5 @@ export class BasicInfoComponent {
           ),
         })
       );
-    }
   }
 }

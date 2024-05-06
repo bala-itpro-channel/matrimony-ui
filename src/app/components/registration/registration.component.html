@@ -2,7 +2,7 @@
     <p-stepper>
     <p-stepperPanel header="Basic Info">
         <ng-template pTemplate="content" let-nextCallback="nextCallback" let-index="index">
-            <div class="flex flex-column h-12rem">
+            <div class="flex flex-column">
                 <!-- 
                     BasicInfo component 
                 -->
@@ -15,7 +15,7 @@
     </p-stepperPanel>
     <p-stepperPanel header="More Details">
         <ng-template pTemplate="content" let-prevCallback="prevCallback" let-nextCallback="nextCallback" let-index="index">
-            <div class="flex flex-column h-12rem">
+            <div class="flex flex-column">
                 <!--MoreInfo component -->
                 <app-more-info [userInfo]="userInfo"></app-more-info>
             </div>
@@ -26,7 +26,7 @@
     </p-stepperPanel>
     <p-stepperPanel header="Review">
         <ng-template pTemplate="content" let-prevCallback="prevCallback" let-index="index">
-            <div class="flex flex-column h-12rem">
+            <div class="flex flex-column">
                 <!--Review component -->
                 <app-review-info />
             </div>
@@ -36,3 +36,4 @@
     </p-stepperPanel>
     </p-stepper>
 </form>
+<!-- <div>{{ userInfoForm.value | json }}</div> -->

@@ -8,11 +8,12 @@ import {
   Validators,
 } from '@angular/forms';
 import { UserInfo } from '../../../models/registration.model';
-
+import { MultiSelectModule } from 'primeng/multiselect';
+import { InputTextModule } from 'primeng/inputtext';
 @Component({
   selector: 'app-more-info',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, InputTextModule, MultiSelectModule],
   templateUrl: './more-info.component.html',
   styleUrl: './more-info.component.scss',
   viewProviders: [
@@ -24,6 +25,14 @@ export class MoreInfoComponent {
   @Input() userInfo!: UserInfo;
   childForm!: FormGroup;
 
+  doshams: any[] = [
+    { name: 'Chevvai Dosham', code: 'Chevvai Dosham' },
+    { name: 'Naga Dosham', code: 'Naga Dosham' },
+    { name: 'Kala Sarpa Dosham', code: 'Kala Sarpa Dosham' },
+    { name: 'Rahu Dosham', code: 'Rahu Dosham' },
+    { name: 'Kethu Dosham', code: 'Kethu Dosham' },
+    { name: 'Kalathra Dosham', code: 'Kalathra Dosham' },
+  ];
   constructor(public parentForm: FormGroupDirective) {}
 
   ngOnInit(): void {
@@ -31,7 +40,10 @@ export class MoreInfoComponent {
     this.childForm.addControl(
       'moreInfo',
       new FormGroup({
-        houseName: new FormControl('', Validators.required),
+        houseName: new FormControl(
+          this.userInfo.houseName,
+          Validators.required
+        ),
         branch: new FormControl('', Validators.required),
         temple: new FormControl('', Validators.required),
         femaleGod: new FormControl('', Validators.required),
