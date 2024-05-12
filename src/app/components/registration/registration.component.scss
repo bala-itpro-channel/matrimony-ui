@@ -1,0 +1,26 @@
+:host ::ng-deep {
+    button.p-button {
+        background: #1b5752;
+        border-color: #1b5752;;
+    }
+
+    .p-selectbutton .p-button.p-highlight {
+        background: #1b5752;
+        border-color: #1b5752;
+        color: #ffffff;
+    }
+}
+
+.flex {
+    display: flex;
+    padding: 4px;
+    &.justify-content-between {
+        justify-content: space-between;
+    }
+    &.justify-content-start {
+        justify-content: start;
+    }
+    &.justify-content-end {
+        justify-content: end;
+    }
+}

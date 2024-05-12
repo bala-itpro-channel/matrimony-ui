@@ -1,0 +1,46 @@
+cypress
+@cypress/schematic
+
+"e2e": "ng e2e",
+"cypress:open": "cypress open",
+"cypress:run": "cypress run"
+
+
+describe('My First E2E Testing', () => {
+
+  it('Visits the initial project page', () => {
+    // visit, url, contains
+    cy.visit('/home')
+    cy.url().should('include', '/home')
+    cy.contains('home works!')
+
+    cy.visit('/deals')
+    cy.contains('deals works!')
+
+    cy.visit('/wireless')
+    cy.contains('wireless works!')
+
+    // last and click
+    cy.visit('/workflow')
+    cy.get('.more').last().click()
+    cy.pause()
+
+    cy.visit('/internet')
+    cy.contains('internet works!')
+
+    // last and click
+    cy.visit('/workflow')
+    cy.get('.more').last().click()
+    cy.pause()
+
+    // type
+    cy.visit('/contact')
+    cy.contains('Contact Us')
+    cy.get('#firstName').type('John', { delay: 200 })
+    cy.get('.input').last().type('Peter', { delay: 200 })
+    cy.get('select').select('India')
+  })
+
+})
+
+

@@ -1,4 +1,8 @@
-<div formGroupName="moreInfo" class="container card p-fluid flex flex-wrap gap-3">
+<div
+  formGroupName="moreInfo"
+  class=""
+>
+  <div class="container card p-fluid flex flex-wrap gap-3">
     <div class="flex-auto">
         <span class="font-bold block mb-2">House Name</span>
         <input type="text" pInputText formControlName="houseName" />
@@ -9,24 +13,41 @@
     </div>
     <div class="flex-auto">
         <span class="font-bold block mb-2">Dosham</span>
-        <p-multiSelect 
-            [options]="doshams" 
-            formControlName="dosham" 
-            placeholder="Select Dosham"
-            optionLabel="name" 
-            display="chip" 
-            [showClear]="true" />
+        <p-multiSelect
+          [options]="doshams"
+          formControlName="dosham"
+          placeholder="Select Dosham"
+          optionLabel="name"
+          display="chip"
+          [showClear]="true"
+        />
     </div>
     <div class="flex-auto">
         <span class="font-bold block mb-2">Female God</span>
-        <input type="text" pInputText formControlName="houseName" />
+        <input type="text" pInputText formControlName="femaleGod" />
     </div>
     <div class="flex-auto">
         <span class="font-bold block mb-2">Native place</span>
-        <input type="text" pInputText formControlName="temple" />
+        <input type="text" pInputText formControlName="nativePlace" />
     </div>
     <div class="flex-auto">
         <span class="font-bold block mb-2">Current place</span>
-        <input type="text" pInputText formControlName="houseName" />
+        <input type="text" pInputText formControlName="currentPlace" />
     </div>
+    <div class="flex-auto">
+      <span class="font-bold block mb-2">Marrital Status</span>
+      <p-selectButton
+        [options]="marritalStatusOption"
+        formControlName="marritalStatus"
+        optionLabel="label"
+        class="marrital-status"
+        optionValue="value"
+      >
+      </p-selectButton>
+    </div>
+  </div>
+  <div class="container card describe">
+    <span class="font-bold block mb-2">Details</span>
+    <textarea type="text" pInputText formControlName="details"></textarea>
+  </div>
 </div>

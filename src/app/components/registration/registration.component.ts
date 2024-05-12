@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { StepperModule } from 'primeng/stepper';
 import { ButtonModule } from 'primeng/button';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -28,6 +28,7 @@ import { MoreInfoComponent } from './more-info/more-info.component';
   ],
 })
 export class RegistrationComponent implements OnInit {
+  @ViewChild('nextBtn') nextBtn!: ElementRef;
   userInfo: UserInfo = {
     id: 0,
     name: 'bala.in@gmail.com',
@@ -53,28 +54,24 @@ export class RegistrationComponent implements OnInit {
     currentPlace: 'Chennai',
     dosham: 'No',
     marritalStatus: 'Single',
-    height: '168cm',
+    height: '168',
     details: 'Hello my name is Bala. <b>I am good man </b>',
     mobile: '+1-647-960-1976',
   };
-
-  profileTypes: ProfileType[] = [
-    { name: 'My self', code: 'My self' },
-    { name: 'Son', code: 'Son' },
-    { name: 'Daughter', code: 'Daughter' },
-    { name: 'Sister', code: 'Sister' },
-    { name: 'Brother', code: 'Brother' },
-    { name: 'Cousin', code: 'Cousin' },
-    { name: 'Relative', code: 'Relative' },
-    { name: 'Friend', code: 'Friend' },
-  ];
 
   userInfoForm!: FormGroup;
   fb: FormBuilder = new FormBuilder();
   basicInfo!: FormGroup;
   ngOnInit(): void {
-    this.userInfoForm = new FormGroup ({
+    this.userInfoForm = new FormGroup({
       title: new FormControl(''),
+    });
+  }
+
+  onLastElementBlur(name: string) {
+    console.log(name);
+    (this.nextBtn.nativeElement as HTMLElement).scrollIntoView({
+      behavior: 'smooth'
     });
   }
 }

@@ -1,5 +1,49 @@
+// @layer parent, child;
+
+// @layer child {
+//     .container {
+//         display: flex;
+//         flex-direction: column;
+//     }
+// }
+
+// @layer parent {
+//     .container {
+//         display: grid;
+//         grid-template-columns: auto auto auto;
+//         row-gap: 16px;
+//         column-gap: 20px;
+//         padding: 10px;
+//     }
+// }
+
+:host ::ng-deep {
+    .marrital-status .p-selectbutton {
+        min-width: 300px;
+        display: flex !important;
+        
+        .p-button-label {
+            font-size: 10px;
+
+        }
+    }
+}
+
 .container {
     display: grid !important;
     grid-template-columns: auto auto auto;
+    row-gap: 16px;
+    column-gap: 20px;
     padding: 10px;
+
+    &.describe {
+        display: flex !important;
+        flex-direction: column;
+        textarea {
+            resize: none;
+            min-height: 100px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+    }
 }

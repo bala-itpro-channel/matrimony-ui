@@ -10,10 +10,17 @@ import {
 import { UserInfo } from '../../../models/registration.model';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { InputTextModule } from 'primeng/inputtext';
+import { SelectButtonModule } from 'primeng/selectbutton';
+
 @Component({
   selector: 'app-more-info',
   standalone: true,
-  imports: [ReactiveFormsModule, InputTextModule, MultiSelectModule],
+  imports: [
+    ReactiveFormsModule,
+    InputTextModule,
+    MultiSelectModule,
+    SelectButtonModule,
+  ],
   templateUrl: './more-info.component.html',
   styleUrl: './more-info.component.scss',
   viewProviders: [
@@ -33,6 +40,12 @@ export class MoreInfoComponent {
     { name: 'Kethu Dosham', code: 'Kethu Dosham' },
     { name: 'Kalathra Dosham', code: 'Kalathra Dosham' },
   ];
+  marritalStatusOption: any[] = [
+    { label: 'Never Married', value: 'Never Married' },
+    { label: 'Widowed', value: 'Widowed' },
+    { label: 'Divorced', value: 'Divorced' },
+    { label: 'Awaiting divorce', value: 'Awaiting divorce' },
+  ];
   constructor(public parentForm: FormGroupDirective) {}
 
   ngOnInit(): void {
@@ -48,11 +61,13 @@ export class MoreInfoComponent {
         temple: new FormControl('', Validators.required),
         femaleGod: new FormControl('', Validators.required),
         dosham: new FormControl('', Validators.required),
-        star: new FormControl('', Validators.required),
-        zodiac: new FormControl('', Validators.required),
         nativePlace: new FormControl('', Validators.required),
         currentPlace: new FormControl('', Validators.required),
         details: new FormControl('', Validators.required),
+        marritalStatus: new FormControl(
+          this.userInfo.marritalStatus,
+          Validators.required
+        ),
       })
     );
   }

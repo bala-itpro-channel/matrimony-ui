@@ -1,20 +1,39 @@
+@import './../../../../variables.scss';
 :host ::ng-deep {
-    .marrital-status .p-selectbutton {
-            min-width: 300px;
-        display: flex !important;
-        
-        .p-button-label {
-            font-size: 10px;
-
-        }
-    }
     .p-datepicker-trigger {
-        background: #1b5752 !important;
+        background: $primary !important;
+    }
+
+    .p-radiobutton .p-radiobutton-box.p-highlight {
+        background-color: $primary !important;
+        background: $primary !important;
+    }
+
+    .p-radiobutton .p-radiobutton-box.p-highlight {
+        background-color: $primary !important;
+        background: $primary !important;
+    }
+
+    .p-radiobutton .p-radiobutton-box.p-highlight:not(.p-disabled):hover {
+        background-color: $primary !important;
+        background: $primary !important;
+    }
+
+    .p-button {
+        padding: 15px 0.2rem;
     }
 }
 
 .container {
+    position: relative;
     display: grid !important;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 33% auto auto;
+    row-gap: 16px;
+    column-gap: 20px;
     padding: 10px;
+}
+ 
+.gender-container {
+    display: flex;
+    gap: 20px;
 }

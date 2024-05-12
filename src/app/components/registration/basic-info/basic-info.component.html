@@ -1,62 +1,139 @@
-<div formGroupName="basicInfo" class="container card p-fluid flex flex-wrap gap-3">
-    <div class="flex-auto">
-        <span class="font-bold block mb-2">First Name</span>
-        <input type="text" pInputText formControlName="firstName" />
-    </div>
-    
-    <div class="flex-auto">
-        <span class="font-bold block mb-2">User Name (Email ID)</span>
-        <input type="text" required type="email" pInputText formControlName="name" />
-    </div>
- 
-    <div class="flex-auto">
-        <span class="font-bold block mb-2">Password</span>
-        <p-password formControlName="password" [toggleMask]="true" />
-    </div>
-    
-    <div class="flex-auto">
-        <span class="font-bold block mb-2">Additional Email</span>
-        <input type="text"  type="email" pInputText formControlName="email" />
-    </div>
+<div
+  formGroupName="basicInfo"
+  class="container card p-fluid flex flex-wrap gap-3"
+>
+  <div class="flex-auto">
+    <span class="font-bold block mb-2">On Behalf Of</span>
+    <p-dropdown
+      [options]="profileTypes"
+      formControlName="onBehalfOf"
+      optionLabel="name"
+      placeholder="Select Profile"
+    />
+  </div>
 
-    <div class="flex-auto">
-        <span class="font-bold block mb-2">Phone</span>
-        <p-inputMask 
-            mask="(999) 999-9999" 
-            formControlName="mobile"
-            placeholder="(999) 999-9999" />
+  <div class="flex-auto">
+    <span class="font-bold block mb-2">User Name (Email ID)</span>
+    <input
+      type="text"
+      required
+      type="email"
+      pInputText
+      formControlName="name"
+    />
+  </div>
+
+  <div class="flex-auto">
+    <span class="font-bold block mb-2">Password</span>
+    <p-password formControlName="password" [toggleMask]="true" />
+  </div>
+
+  <div class="flex-auto">
+    <span class="font-bold block mb-2">Full Name</span>
+    <input type="text" pInputText formControlName="firstName" />
+  </div>
+
+  <div class="flex-auto">
+    <span class="font-bold block mb-2">Gender</span>
+    <div class="gender-container">
+      <div class="flex align-items-center">
+        <p-radioButton
+          name="gender"
+          value="Male"
+          formControlName="gender"
+          inputId="ingredient3"
+        />
+        <label for="ingredient3" class="ml-2"> Male </label>
+      </div>
+
+      <div class="flex align-items-center">
+        <p-radioButton
+          name="gender"
+          value="Female"
+          formControlName="gender"
+          inputId="ingredient4"
+        />
+        <label for="ingredient4" class="ml-2"> Female </label>
+      </div>
     </div>
+  </div>
 
+  <div class="flex-auto">
+    <span class="font-bold block mb-2">Date of Birth</span>
+    <p-calendar
+      formControlName="dob"
+      [showIcon]="true"
+      [showOnFocus]="false"
+      inputId="buttondisplay"
+    />
+  </div>
 
+  <div class="flex-auto">
+    <span class="font-bold block mb-2">Contact Email</span>
+    <input type="text" type="email" pInputText formControlName="email" />
+  </div>
 
-    <div class="flex-auto">
-        <span class="font-bold block mb-2">Father Name</span>
-        <input type="text" pInputText formControlName="fatherName" />
-    </div>
+  <div class="flex-auto">
+    <span class="font-bold block mb-2">Contact Phone</span>
+    <p-inputMask
+      mask="(999) 999-9999"
+      formControlName="mobile"
+      placeholder="(999) 999-9999"
+    />
+  </div>
 
-    <div class="flex-auto">
-        <span class="font-bold block mb-2">Mother Name</span>
-        <input type="text" pInputText formControlName="motherName" />
-    </div>
+  <div class="flex-auto">
+    <span class="font-bold block mb-2">Father Name</span>
+    <input type="text" pInputText formControlName="fatherName" />
+  </div>
 
-    <div class="flex-auto">
-        <span class="font-bold block mb-2">Date of Birth</span>
-        <p-calendar 
-            formControlName="dob"
-            [showIcon]="true" 
-            [showOnFocus]="false" 
-            inputId="buttondisplay" />
-    </div>
+  <div class="flex-auto">
+    <span class="font-bold block mb-2">Mother Name</span>
+    <input type="text" pInputText formControlName="motherName" />
+  </div>
 
-    <div class="flex-auto">
-        <span class="font-bold block mb-2">Marrital Status</span>
-        <p-selectButton 
-            [options]="marritalStatusOption" 
-            formControlName="marritalStatus" 
-            optionLabel="label" 
-            class="marrital-status"
-            optionValue="value">
-        </p-selectButton>
-    </div>
+  <div class="flex-auto">
+    <span class="font-bold block mb-2">Height</span>
+    <p-inputNumber 
+      formControlName="height"
+      inputId="mile" 
+      suffix=" Cms" /> 
+  </div>
+
+  <div class="flex-auto">
+    <span class="font-bold block mb-2">Zodiac</span>
+    <p-dropdown
+      [options]="zodiacList"
+      formControlName="onBehalfOf"
+      optionLabel="label"
+      placeholder="Select Profile"
+    />
+  </div>
+
+  <div class="flex-auto">
+    <span class="font-bold block mb-2">Star</span>
+    <p-dropdown
+      [options]="starList"
+      formControlName="onBehalfOf"
+      optionLabel="label"
+      placeholder="Select Profile"
+    />
+  </div>
+
+  <div class="flex-auto">
+    <span class="font-bold block mb-2">Job / Business detail</span>
+    <input type="text" pInputText formControlName="job" />
+  </div>
+
+  <div class="flex-auto">
+    <span class="font-bold block mb-2">Annual Salary / Income</span>
+    <p-inputNumber 
+      formControlName="income"
+      (blur)="lastElementBlur.emit('')"
+      mode="currency" 
+      inputId="currency-india" 
+      currency="INR" 
+      currencyDisplay="code" 
+      locale="en-IN" />
+  </div>
 </div>
-

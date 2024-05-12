@@ -6,9 +6,9 @@
                 <!-- 
                     BasicInfo component 
                 -->
-                <app-basic-info [userInfo]="userInfo"></app-basic-info>
+                <app-basic-info [userInfo]="userInfo" (lastElementBlur)="onLastElementBlur($event)"></app-basic-info>
             </div>
-            <div class="flex pt-4 justify-content-end">
+            <div class="flex pt-4 justify-content-end" #nextBtn>
                 <p-button label="Next" icon="pi pi-arrow-right" iconPos="right" (onClick)="nextCallback.emit()" />
             </div>
         </ng-template>
