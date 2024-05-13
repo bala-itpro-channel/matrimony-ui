@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import {
   ControlContainer,
   FormControl,
@@ -40,7 +46,7 @@ export class BasicInfoComponent {
   @Input() userInfo!: UserInfo;
   @Output() lastElementBlur = new EventEmitter<string>();
   childForm!: FormGroup;
-  
+
   profileTypes: ProfileType[] = [
     { name: 'My self', code: 'My self' },
     { name: 'Son', code: 'Son' },

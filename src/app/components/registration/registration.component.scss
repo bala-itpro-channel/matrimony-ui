@@ -9,6 +9,27 @@
         border-color: #1b5752;
         color: #ffffff;
     }
+
+  .p-stepper .p-stepper-header.p-highlight .p-stepper-number {
+      background: #fff179 !important;
+      color: #1b5752 !important;
+  }
+
+  .p-stepper .p-stepper-header:has(~ .p-highlight) .p-stepper-separator {
+    background-color: #22ae06 !important;
+  }
+
+  .p-stepper .p-stepper-separator {
+    background-color: lightgray !important;
+  }
+
+  .p-stepper .p-stepper-header .p-stepper-action .p-stepper-number {
+    color: white;
+    border: 1px solid #f3f4f6;
+    border-width: 2px;
+    background: green;
+  }
+
 }
 
 .flex {

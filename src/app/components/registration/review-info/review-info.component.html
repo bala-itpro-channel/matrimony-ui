@@ -54,7 +54,20 @@
                 <td>House Name</td><td>{{this.userInfo.houseName}}</td>
             </tr>
             <tr>
-                <td>Dosham</td><td>{{this.userInfo.dosham}}</td>
+                <td>Dosham</td>
+                <td>
+                    @for (item of this.userInfo.dosham.split(','); track $index) {
+                        <li *ngIf="item"> {{ item }}</li>
+                    } @empty {
+                        <span>No Dosham</span>
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>Zodiac</td><td>{{this.userInfo.zodiac}}</td>
+            </tr>
+            <tr>
+                <td>Star</td><td>{{this.userInfo.star}}</td>
             </tr>
             <tr>
                 <th colspan="3">Additional Details</th>
@@ -68,111 +81,123 @@
         <h4 style="text-align: center;">
             vallambar Matrimony - Terms and Conditions
         </h4>
-Welcome to vallambarmatrimony.com, it is a platform providing services like match making alliance. To get started with our vallambar matrimony team you need to register as a member and must abide by these terms and conditions. In acceptance of vallambar matrimony terms and conditions you are providing access to make your profile visible to the other members of the site. We are clearly acknowledging that this site is not for dating it’s based on the partner matching with relevant interest before you register be clear with the terms and policies. The site and its service is only applicable within the province Coimbatore court.
-
-Who are eligible to use vallambar matrimony Site?
-The eligibility of the member to register in the site must be followed under the India law of marriage. According to the Indian Marriage Act 1955, the Benedict (Bridegroom) should be of age 21 or above and the Bride should be of age 18 or above, the parties below the age is not accepted as per Law. Both the parties must not be within the degree of relationship. In between if our vallambar matrimony team found that your details are not acceptable and in case of not eligibility, your membership will be cancelled and you’re right to use the service without any refund to you of any of your unutilized subscription fee. The phone number and details you provide must be a valid one.
-
-What are the terms that should be noted before using site?
-The vallambar matrimony site is not responsible for incorrect/inaccurate content posted in the site. The content which promotes racism are prohibited. vallambar matrimony team don’t closely watch your private data unless required by the law, regulations, court order, if our team (vallambarmatrimony.com) cancel your membership for rupture of terms of this agreement, there won’t be any refund of pay that you paid. The paid membership terms would be in accordance with the type of membership undertaken. The member can unsubscribe or terminate their page by contacting JayMatrimony.com, the notification based on the termination by team for any reason or in any information’s will be passed through e-mail (only if you have added a valid e-mail id in your profile). Section 4, 5, 7 and 9 to 14 provisions under this agreement will be stable even on termination.
-
-The contributions that vallambar matrimony cares are a social initiative, it is afflicting transactions only on vallambarmatrimony.com, there it is not responsible for the end use of the amounts being contributed. If any valid reason there is possibility of refund the amount paid, where in such account the fund does not libel for refund is.
-
-Non-Commercial use by member:
-vallambar matrimony site is only for the personal use of individuals and not for any commercial purpose. The site have the authority permission to cancel any membership or take any legal action including without limitations, civil, criminal and injunctive redress in case of reason if you are not eligible/violating terms or using site for unauthorized access.
-
-Jurisdiction
-
-The member of this site must be bound by these terms, the service shall assist you making if there is any dispute about or involving the Site and/or the Service, by using the Site, you unconditionally agree that all such disputes and/or differences will be governed by the laws of India and shall be subject to the exclusive jurisdiction of the Competent Courts.
-
-The Terms that the Members should follow
-1. Each member should register with the details required in the field provided.
-
-
-2. To get the best partner profiles and easy shortlists the member must update their present photograph.
-
-3. Contacting profile will be displayed only to the paid members, the free plans will be applicable only for short period of time.
-4. Hereby you confirm that as on date of registration, you will receive notifications from our team (vallambar matrimony).This consent shall supersede any preferences set by you with or registration done with the Do Not Disturb (DND Register)/ National Customer Preference Register (NCPR). This consent extends to emails, messages or calls relating but not limited to phone number verification, the provision of matchmaking advertising service, matchmaking enquiries and promotions.
-5. The vallambarmatrimony holds the right in its sole discretion to view the status and activity of each account and block the account of the member in such a review.
-6. The information provided in the vallambar matrimony site must be correct and accurate to the member knowledge.
-7. The member of the site cannot hold so many accounts, our team has rights to cancel the multiple accounts if any.
-8. In case of misuse of accounts or violating other profiles must lead to deleting your registration or taking legal action on the member who violates.
-9. Personal identification or solicits password or unlawful express from other users, as well engaging in commercial holds sales without prior written consent like contests, barter, advertising and sweepstakes.
-10. The members should not transmit any junk mails/messages to the other users of the site.
-11. You are not allowed to access the content of the site / interacting with vallambarmatrimony.com or with any other members using IRC Bots, CGI or any other programs.
-12. The members are asked to submit their ID proof provided by the government for the acknowledgement purpose.
-
-Limitations and Liabilities
-vallambarmatrimony is not responsible for any wrong match made due to any available data from the website.
-Our vallambarmatrimony team is do not take the responsibility if any member approaches the other member of the site for matrimony/ if not responded to the approach.
-vallambarmatrimony.com shall under no circumstance liable or responsible to the member or his/her authorized Representative or Guardian or any third party for any direct, indirect, special, exemplary, incidental, or consequential damages of any character including, without limitation, damages resulting from the use of our Website / Third Party Website/ Website.
-Our liability to you for any cause whatsoever, and regardless of the form of action, will at all times be limited to the amount paid,if any, by you to vallambarmatrimony , for any specific vallambarmatrimony paid package, and no further.
-
-Disclaimers
-vallambarmatrimonydoes not warranty for any inaccurate details included in the site.
-We cannot provide surety of your alliance on registering; it only depends on your details provided.
-Mismatching contents / inaccurate contents are not allowed to submit.
-Registering and accessing the JayMatrimony site is at your own risk as you clearly accept the terms and policy written "As Is and As Available"
-JayMatrimony never assent any avocation or liability for illegal content posted on site by user or any third party.
-We cannot assure that the site and its server is free out of virus and other harmful components, we will not be liable for any damages of any kind of any arising from the use of this site, Including,but not be limited to direct, incidental, punitive, and consequential damages.
-The additional use of service like horoscope matching may include the pay through the website.
-
-Member Disputes
-Between the vallambarmatrimony is not responsible for any disputes between you and the other members of site as it’s depends on your own risk. You agree and undertake that your interaction with the other members is at your own sole description and responsibility, and that vallambarmatrimony shall not liable for conforming the veracity of the content of the other member.
-
-Contents Posted
-The contents that are posted in the site are only under the particular member responsibility, vallambarmatrimony doesn’t involve in the issue further
-By posting the content in any public area in the website you automatically grant and warrant that you have the right to grant, to vallambarmatrimony and vallambarmatriony members, an irrevocable worldwide license to use, copy, perform and distribute such information’s and contents and to prepare derivative works of, or incorporate into other works, such contents, and to grant and authorize sublicenses for the forgoing.
-
-The contents which are strictly prohibited in the site are listed,
-
-1. Promoting racism
-2. Junk message/mail
-3. Spamming and socialized message
-4. A member should access only one account
-5. Provides instructional information’s about illegal activities like violation/violating someone's privacy.
-6. Providing an illegal or unauthorized copy of others copyrighted works.
-The service must be used only under the Marriage law by government. Legal actions can be taken when someone is not obeying the terms and policies.
-The members should understand and agree that the vallambarmatrimony team may delete any content/message/photo that in the sole judgement in JayMatrimony.com in violate the terms or in offensive or illegal that may harm the privacy of other members.
-
-How does the payment be transferred
-The payment be accepted in mode of credit cards and cheque and demand draft for this money transaction the member must add valid account number, once the transaction process get rid the notification will be sent to member. The payment details and transaction process in acknowledged with the users of vallambar matrimony.
-
-Privacy
-The privacy policy provided by the vallambarmatrimony is under the legal laws and terms. These are framed and governed only to protect your privacy.It’s again mentioned that the site and its service is only applicable within Coimbatore court of province.
-
-Proprietary Rights
-The proprietary rights are subscribed and owned by vallambarmatrimony, where the copyright content, information of site (vallambarmatrimony.com), imprint and its licensor. Other than the user provided accessible public contents you cannot access, copy, modify, publish, perform, display and transmit or sell the proprietary details. Thus, if any such violation or tries of misusing agreement and your membership is liable to be cancelled by our vallambarmatrimony team without refund of any of your subscription fee. Our team has the right to take action in accordance of such violation.
-
-Indemnity
-You agree to indemnify and hold vallambarmatrimony and its directors, officers, agents and successors from all its liabilities, damages, cost, and expenses including attorney’s fees, arising out of claim based upon the use of your account and contravention of any terms herein for availing of this service, includes intellectual properties or other rights.
-
-Copyrights
-The details and the status/contents posted are copyrighted and owned by vallambarMatrimony. If you sense that any information is copied and pasted in vallambarmatrimony in any way that inaugurate copyrights offense we request you to provide the details,
-
-A statement that you trust that the contented use is not authorized by the copyrights owner, its agent, or by law-
-
-Your address, number and e-mail address-
-
-A description of the copyrighted that you claim has been intruded-
-
-An electronic or physical signature of the member authorized to act on behalf of the owner of the copyright interest-
-
-A statement by you, made under penalty of perjury, that the above information in your Notice is accurate and that you are the copyright owner or authorized to act on the copyright owner's behalf.
-
-The future changes may be found on our site vallambarmatrimony.com.
-
-Thankyou,
-vallambarmatrimony.com
+        <p>
+            Welcome to vallambarmatrimony.com, it is a platform providing services like match making alliance. To get started with our vallambar matrimony team you need to register as a member and must abide by these terms and conditions. In acceptance of vallambar matrimony terms and conditions you are providing access to make your profile visible to the other members of the site. We are clearly acknowledging that this site is not for dating it’s based on the partner matching with relevant interest before you register be clear with the terms and policies. The site and its service is only applicable within the province Coimbatore court.
+        </p>
+        <p>
+            Who are eligible to use vallambar matrimony Site?
+            The eligibility of the member to register in the site must be followed under the India law of marriage. According to the Indian Marriage Act 1955, the Benedict (Bridegroom) should be of age 21 or above and the Bride should be of age 18 or above, the parties below the age is not accepted as per Law. Both the parties must not be within the degree of relationship. In between if our vallambar matrimony team found that your details are not acceptable and in case of not eligibility, your membership will be cancelled and you’re right to use the service without any refund to you of any of your unutilized subscription fee. The phone number and details you provide must be a valid one.
+        </p>
+        <p>
+            What are the terms that should be noted before using site?
+            The vallambar matrimony site is not responsible for incorrect/inaccurate content posted in the site. The content which promotes racism are prohibited. vallambar matrimony team don’t closely watch your private data unless required by the law, regulations, court order, if our team (vallambarmatrimony.com) cancel your membership for rupture of terms of this agreement, there won’t be any refund of pay that you paid. The paid membership terms would be in accordance with the type of membership undertaken. The member can unsubscribe or terminate their page by contacting JayMatrimony.com, the notification based on the termination by team for any reason or in any information’s will be passed through e-mail (only if you have added a valid e-mail id in your profile). Section 4, 5, 7 and 9 to 14 provisions under this agreement will be stable even on termination.
+        </p>
+        <p>
+            The contributions that vallambar matrimony cares are a social initiative, it is afflicting transactions only on vallambarmatrimony.com, there it is not responsible for the end use of the amounts being contributed. If any valid reason there is possibility of refund the amount paid, where in such account the fund does not libel for refund is.
+        </p>
+        <p>
+            Non-Commercial use by member:
+            vallambar matrimony site is only for the personal use of individuals and not for any commercial purpose. The site have the authority permission to cancel any membership or take any legal action including without limitations, civil, criminal and injunctive redress in case of reason if you are not eligible/violating terms or using site for unauthorized access.
+        </p>
+        <p>
+            Jurisdiction
+            
+            The member of this site must be bound by these terms, the service shall assist you making if there is any dispute about or involving the Site and/or the Service, by using the Site, you unconditionally agree that all such disputes and/or differences will be governed by the laws of India and shall be subject to the exclusive jurisdiction of the Competent Courts.
+            
+            The Terms that the Members should follow<br/><br/>
+            1. Each member should register with the details required in the field provided.<br/>
+            2. To get the best partner profiles and easy shortlists the member must update their present photograph.<br/>
+            3. Contacting profile will be displayed only to the paid members, the free plans will be applicable only for short period of time.<br/>
+            4. Hereby you confirm that as on date of registration, you will receive notifications from our team (vallambar matrimony).This consent shall supersede any preferences set by you with or registration done with the Do Not Disturb (DND Register)/ National Customer Preference Register (NCPR). This consent extends to emails, messages or calls relating but not limited to phone number verification, the provision of matchmaking advertising service, matchmaking enquiries and promotions.<br/>
+            5. The vallambarmatrimony holds the right in its sole discretion to view the status and activity of each account and block the account of the member in such a review.<br/>
+            6. The information provided in the vallambar matrimony site must be correct and accurate to the member knowledge.<br/>
+            7. The member of the site cannot hold so many accounts, our team has rights to cancel the multiple accounts if any.<br/>
+            8. In case of misuse of accounts or violating other profiles must lead to deleting your registration or taking legal action on the member who violates.<br/>
+            9. Personal identification or solicits password or unlawful express from other users, as well engaging in commercial holds sales without prior written consent like contests, barter, advertising and sweepstakes.<br/>
+            10. The members should not transmit any junk mails/messages to the other users of the site.<br/>
+            11. You are not allowed to access the content of the site / interacting with vallambarmatrimony.com or with any other members using IRC Bots, CGI or any other programs.<br/>
+            12. The members are asked to submit their ID proof provided by the government for the acknowledgement purpose.<br/>
+        </p>
+        <p>
+            Limitations and Liabilities
+            vallambarmatrimony is not responsible for any wrong match made due to any available data from the website.
+            Our vallambarmatrimony team is do not take the responsibility if any member approaches the other member of the site for matrimony/ if not responded to the approach.
+            vallambarmatrimony.com shall under no circumstance liable or responsible to the member or his/her authorized Representative or Guardian or any third party for any direct, indirect, special, exemplary, incidental, or consequential damages of any character including, without limitation, damages resulting from the use of our Website / Third Party Website/ Website.
+            Our liability to you for any cause whatsoever, and regardless of the form of action, will at all times be limited to the amount paid,if any, by you to vallambarmatrimony , for any specific vallambarmatrimony paid package, and no further.
+        </p>
+        <p>
+            Disclaimers
+            vallambarmatrimonydoes not warranty for any inaccurate details included in the site.
+            We cannot provide surety of your alliance on registering; it only depends on your details provided.
+            Mismatching contents / inaccurate contents are not allowed to submit.
+            Registering and accessing the JayMatrimony site is at your own risk as you clearly accept the terms and policy written "As Is and As Available"
+            JayMatrimony never assent any avocation or liability for illegal content posted on site by user or any third party.
+            We cannot assure that the site and its server is free out of virus and other harmful components, we will not be liable for any damages of any kind of any arising from the use of this site, Including,but not be limited to direct, incidental, punitive, and consequential damages.
+            The additional use of service like horoscope matching may include the pay through the website.
+        </p>
+        <p>
+            Member Disputes
+            Between the vallambarmatrimony is not responsible for any disputes between you and the other members of site as it’s depends on your own risk. You agree and undertake that your interaction with the other members is at your own sole description and responsibility, and that vallambarmatrimony shall not liable for conforming the veracity of the content of the other member.
+        </p>
+        <p>
+            Contents Posted
+            The contents that are posted in the site are only under the particular member responsibility, vallambarmatrimony doesn’t involve in the issue further
+            By posting the content in any public area in the website you automatically grant and warrant that you have the right to grant, to vallambarmatrimony and vallambarmatriony members, an irrevocable worldwide license to use, copy, perform and distribute such information’s and contents and to prepare derivative works of, or incorporate into other works, such contents, and to grant and authorize sublicenses for the forgoing.
+        </p>
+        <p>
+            The contents which are strictly prohibited in the site are listed,
+            
+            1. Promoting racism
+            2. Junk message/mail
+            3. Spamming and socialized message
+            4. A member should access only one account
+            5. Provides instructional information’s about illegal activities like violation/violating someone's privacy.
+            6. Providing an illegal or unauthorized copy of others copyrighted works.
+            The service must be used only under the Marriage law by government. Legal actions can be taken when someone is not obeying the terms and policies.
+            The members should understand and agree that the vallambarmatrimony team may delete any content/message/photo that in the sole judgement in JayMatrimony.com in violate the terms or in offensive or illegal that may harm the privacy of other members.
+        </p>
+        <p>
+            How does the payment be transferred
+            The payment be accepted in mode of credit cards and cheque and demand draft for this money transaction the member must add valid account number, once the transaction process get rid the notification will be sent to member. The payment details and transaction process in acknowledged with the users of vallambar matrimony.
+        </p>
+        <p>
+            Privacy
+            The privacy policy provided by the vallambarmatrimony is under the legal laws and terms. These are framed and governed only to protect your privacy.It’s again mentioned that the site and its service is only applicable within Coimbatore court of province.
+        </p>
+        <p>
+            Proprietary Rights
+            The proprietary rights are subscribed and owned by vallambarmatrimony, where the copyright content, information of site (vallambarmatrimony.com), imprint and its licensor. Other than the user provided accessible public contents you cannot access, copy, modify, publish, perform, display and transmit or sell the proprietary details. Thus, if any such violation or tries of misusing agreement and your membership is liable to be cancelled by our vallambarmatrimony team without refund of any of your subscription fee. Our team has the right to take action in accordance of such violation.
+        </p>
+        <p>
+            Indemnity
+            You agree to indemnify and hold vallambarmatrimony and its directors, officers, agents and successors from all its liabilities, damages, cost, and expenses including attorney’s fees, arising out of claim based upon the use of your account and contravention of any terms herein for availing of this service, includes intellectual properties or other rights.
+        </p>
+        <p>
+            Copyrights
+            The details and the status/contents posted are copyrighted and owned by vallambarMatrimony. If you sense that any information is copied and pasted in vallambarmatrimony in any way that inaugurate copyrights offense we request you to provide the details,
+            
+            A statement that you trust that the contented use is not authorized by the copyrights owner, its agent, or by law-
+            
+            Your address, number and e-mail address-
+            
+            A description of the copyrighted that you claim has been intruded-
+            
+            An electronic or physical signature of the member authorized to act on behalf of the owner of the copyright interest-
+            
+            A statement by you, made under penalty of perjury, that the above information in your Notice is accurate and that you are the copyright owner or authorized to act on the copyright owner's behalf.
+            
+            The future changes may be found on our site vallambarmatrimony.com.
+            
+            Thankyou,
+            vallambarmatrimony.com
+        </p>
     </div>
 
-    <div class="flex align-items-center">
+    <div class="flex-column-center align-items-center">
         <p-checkbox 
             [(ngModel)]="termsAndConditions"
             [binary]="true"
-            label="Agree" />
-    </div>
-    <div>
-        <button [disabled]="!termsAndConditions">Submit</button>
+            label="I read the above terms & conditions. I accept and agree." />
+        <button (click)="saveProfile()" class="p-ripple p-element p-button p-component submit" [disabled]="!termsAndConditions">Submit</button>
     </div>
 </div>

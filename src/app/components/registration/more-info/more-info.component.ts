@@ -46,6 +46,7 @@ export class MoreInfoComponent {
     { label: 'Divorced', value: 'Divorced' },
     { label: 'Awaiting divorce', value: 'Awaiting divorce' },
   ];
+  
   constructor(public parentForm: FormGroupDirective) {}
 
   ngOnInit(): void {
@@ -59,8 +60,8 @@ export class MoreInfoComponent {
         ),
         branch: new FormControl('', Validators.required),
         temple: new FormControl('', Validators.required),
-        femaleGod: new FormControl('', Validators.required),
-        dosham: new FormControl('', Validators.required),
+        femaleGod: new FormControl(''),
+        dosham: new FormControl(''),
         nativePlace: new FormControl('', Validators.required),
         currentPlace: new FormControl('', Validators.required),
         details: new FormControl('', Validators.required),
@@ -68,6 +69,7 @@ export class MoreInfoComponent {
           this.userInfo.marritalStatus,
           Validators.required
         ),
+        role: new FormControl('ROLE_USER')
       })
     );
   }

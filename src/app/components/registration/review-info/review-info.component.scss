@@ -1,3 +1,29 @@
+@import './../../../../variables.scss';
+:host ::ng-deep {
+  .p-checkbox .p-checkbox-box.p-highlight {
+    border-color: $primary;
+    background: $primary;
+  }
+
+  .p-checkbox .p-checkbox-box.p-highlight:hover {
+    border-color: rgb(5, 54, 32);
+    background: rgb(5, 54, 32);
+  }
+
+  .p-checkbox .p-checkbox-box {
+    border-color: $primary;
+    &:hover {
+      border-color: rgb(5, 54, 32);
+    }
+  }
+
+  p-checkbox:not(p-checkbox-disabled) .p-checkbox-box.p-focus {
+    box-shadow: 0 0 0 0.2rem #76a78f;
+  }
+
+
+}
+
 table {
     border: 1px solid gray;
     width: 100%;
@@ -14,9 +40,9 @@ tbody > tr > td {
 }
 
 tbody > tr > th {
-  border-top: 1px solid rgb(160 160 160);
-  border-bottom: 1px solid rgb(140 140 140);
-  background-color: #e4f0f5;
+  border-top: 0 solid rgb(160 160 160);
+  border-bottom: 0 solid rgb(140 140 140);
+  background-color: #f9f584;
   font-weight: normal;
 }
 
@@ -28,7 +54,7 @@ tr:hover {background-color: coral;}
 
 tr:nth-child(even){background-color: #f2f2f2;}
 
-tr:hover {background-color: #ddd;}
+tr:hover {background-color: #f2f8d2;}
 
 .terms {
   padding: 0 20px;
@@ -37,4 +63,18 @@ tr:hover {background-color: #ddd;}
   overflow-y: scroll;
   overflow-x: hidden;
   border: 1px solid gray;
+  font-size: 10px;
+}
+
+.flex-column-center {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.submit {
+   padding: 10px 40px;
 }

@@ -3,10 +3,12 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes), 
+    provideRouter(routes),
     importProvidersFrom(BrowserAnimationsModule),
-  ]
+    provideHttpClient(withFetch()),
+  ],
 };
