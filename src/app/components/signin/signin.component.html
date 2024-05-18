@@ -1,1 +1,25 @@
-<p>signin works!</p>
+<form [formGroup]="loginForm" autocomplete="off">
+  <div class="flex-auto">
+    <span class="font-bold block mb-2">Email</span>
+    <input autocomplete="off" type="text" pInputText formControlName="email" />
+  </div>
+  <div class="flex-auto">
+    <span class="font-bold block mb-2">Password</span>
+    <p-password
+      formControlName="password"
+      [feedback]="false"
+      [toggleMask]="true"
+    />
+  </div>
+  <div class="flex-auto buttons">
+    <div class="checkbox-container">
+        <p-checkbox 
+            formControlName="keepLoggedIn" 
+            value="Ne" 
+            inputId="ny" />
+        <span>Keep me logged in</span>
+    </div>
+    <p-button label="LOGIN" [disabled]="loginForm.invalid" icon="pi pi-sign-in" iconPos="right" (onClick)="signIn()" />
+    <a href="#">Forgot password?</a>
+  </div>
+</form>

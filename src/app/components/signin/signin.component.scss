@@ -1,0 +1,73 @@
+@import './../../../variables.scss';
+:host ::ng-deep {
+  .p-checkbox .p-checkbox-box.p-highlight {
+    border-color: $primary;
+    background: $primary;
+  }
+
+  .p-checkbox .p-checkbox-box.p-highlight:hover {
+    border-color: rgb(5, 54, 32);
+    background: rgb(5, 54, 32);
+  }
+
+  .p-checkbox .p-checkbox-box {
+    border-color: $primary;
+    &:hover {
+      border-color: rgb(5, 54, 32);
+    }
+  }
+
+  p-checkbox:not(p-checkbox-disabled) .p-checkbox-box.p-focus {
+    box-shadow: 0 0 0 0.2rem #76a78f;
+  }
+
+
+}
+:host {
+    display: flex;
+    height: calc(100vh - 74px);
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+    form {
+        border: 1px solid lightgray;
+        padding: 20px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        
+        .flex-auto {
+            &:first-child {
+                padding-top: 0px;
+            }
+            padding-top: 20px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            &.buttons {
+                width: 100%;
+                gap: 12px;
+                .checkbox-container {
+                    display: flex;
+                    gap: 10px;
+                    justify-content: start;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
+:host ::ng-deep {
+    .p-password, input.p-inputtext {
+        width: 100% !important  ;
+    }
+    button.p-button {
+        background: #1b5752;
+        border-color: #1b5752;
+        width: 100%;
+    }
+}

@@ -200,4 +200,8 @@
             label="I read the above terms & conditions. I accept and agree." />
         <button (click)="saveProfile()" class="p-ripple p-element p-button p-component submit" [disabled]="!termsAndConditions">Submit</button>
     </div>
+    <p-toast 
+        key="toastMessage"
+        (onClose)="onClose()" 
+        position="bottom-center"  />
 </div>
