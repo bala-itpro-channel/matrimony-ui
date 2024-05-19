@@ -21,6 +21,8 @@ import { CalendarModule } from 'primeng/calendar';
 import { DropdownModule } from 'primeng/dropdown';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-basic-info',
@@ -34,6 +36,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
     DropdownModule,
     RadioButtonModule,
     InputNumberModule,
+    CommonModule
   ],
   templateUrl: './basic-info.component.html',
   styleUrl: './basic-info.component.scss',
@@ -85,7 +88,9 @@ export class BasicInfoComponent {
     { label: 'Pisces / மீனம்', value: 'Pisces' },
   ];
 
-  constructor(public parentForm: FormGroupDirective) {}
+  constructor(public parentForm: FormGroupDirective,
+    private router: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.childForm = this.parentForm.form;
@@ -94,7 +99,7 @@ export class BasicInfoComponent {
       new FormGroup({
         id: new FormControl(this.userInfo.id),
         onBehalfOf: new FormControl(
-          this.userInfo.onBehalfOf,
+          { name: this.userInfo.onBehalfOf, code: this.userInfo.onBehalfOf },
           Validators.required
         ),
         mobile: new FormControl(this.userInfo.mobile, Validators.required),
@@ -120,8 +125,7 @@ export class BasicInfoComponent {
         job: new FormControl(this.userInfo.job, Validators.required),
         income: new FormControl(this.userInfo.income, Validators.required),
         education: new FormControl(
-          this.userInfo.education,
-          Validators.required
+          this.userInfo.education
         ),
         gender: new FormControl(this.userInfo.gender, Validators.required),
       })

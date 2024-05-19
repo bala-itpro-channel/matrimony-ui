@@ -1,0 +1,97 @@
+@import './../../../variables.scss';
+
+:host ::ng-deep {
+    p-dropdown.ng-dirty.ng-invalid > .p-dropdown,
+    p-dropdown.ng-touched.ng-invalid > .p-dropdown,
+    .p-inputtext.ng-dirty.ng-invalid, 
+    .p-inputtext.ng-touched.ng-invalid,
+    p-inputmask.ng-dirty.ng-invalid > .p-inputtext, 
+    p-inputmask.ng-touched.ng-invalid > .p-inputtext {
+        border-color: #e24c4c;
+    }
+    input {
+        width: 100%;
+    }
+    .p-dropdown {
+        width: 100%;
+    }
+    button.p-button {
+        background: #1b5752;
+        border-color: #1b5752;
+        padding: 10px 40px;
+    }
+    .p-datepicker-trigger {
+        background: $primary !important;
+    }
+
+    .p-radiobutton .p-radiobutton-box.p-highlight {
+        background-color: $primary !important;
+        background: $primary !important;
+    }
+
+    .p-radiobutton .p-radiobutton-box.p-highlight {
+        background-color: $primary !important;
+        background: $primary !important;
+    }
+
+    .p-radiobutton .p-radiobutton-box.p-highlight:not(.p-disabled):hover {
+        background-color: $primary !important;
+        background: $primary !important;
+    }
+
+    .p-button {
+        padding: 15px 0.2rem;
+    }
+}
+
+:host {
+    display: block;
+    padding: 10px !important;
+    .registration {
+        display: flex;
+        flex-wrap: wrap;
+        min-height: calc(100vh - 114px);
+        .reg-text {
+            h2 {
+                margin-top: 0;
+            }
+            img {
+                object-fit: cover;
+                height: 300px;
+                width: 100%;
+                opacity: .9;
+            };
+            width: 50%;
+            display: flex;
+            align-items: start;
+            flex-direction: column;
+            background: #e06506;
+            color: white;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            padding: 20px;
+        }
+    }
+    .container {
+        width: 50%;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        background: #f6daa6;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        .gender-container {
+            display: flex;
+            gap: 20px;
+        }
+    }
+
+    .flex-auto {
+        width: 300px;
+        &:last-child {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

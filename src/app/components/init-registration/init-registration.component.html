@@ -1,64 +1,85 @@
-<div
-  [formGroup]="initRegForm"
-  class="container card p-fluid flex flex-wrap gap-3"
->
-  <div class="flex-auto">
-    <span class="font-bold block mb-2">On Behalf Of</span>
-    <p-dropdown
-      [options]="profileTypes"
-      formControlName="onBehalfOf"
-      optionLabel="name"
-      placeholder="Select Profile"
-    />
-  </div>
-
-  <div class="flex-auto">
-    <span class="font-bold block mb-2">User Name (Email ID)</span>
-    <input
-      type="text"
-      required
-      type="email"
-      pInputText
-      formControlName="email"
-    />
-  </div>
-
-  <div class="flex-auto">
-    <span class="font-bold block mb-2">Bride/Groom Full Name</span>
-    <input type="text" pInputText formControlName="firstName" />
-  </div>
-
-  <div class="flex-auto">
-    <span class="font-bold block mb-2">Bride/Groom Gender</span>
-    <div class="gender-container">
-      <div class="flex align-items-center">
-        <p-radioButton
-          name="gender"
-          value="Male"
-          formControlName="gender"
-          inputId="ingredient3"
-        />
-        <label for="ingredient3" class="ml-2"> Male </label>
+<div class="registration">
+  <div class="reg-text">
+    <h2>
+      Register
+    </h2>
+    <section>
+      <p>
+        This is free and you can access all the features of this site after you register your profile.
+        This is free and you can access all the features of this site after you register your profile.
+        This is free and you can access all the features of this site after you register your profile.
+      </p>
+      <div>
+        <img [border]="0" src="./../../../assets/images/thali.png" alt="Marriage Thali">
       </div>
-
-      <div class="flex align-items-center">
-        <p-radioButton
-          name="gender"
-          value="Female"
-          formControlName="gender"
-          inputId="ingredient4"
-        />
-        <label for="ingredient4" class="ml-2"> Female </label>
+    </section>
+  </div>
+  <div
+    [formGroup]="initRegForm"
+    class="container card flex gap-3"
+  >
+    <div class="flex-auto">
+      <span class="font-bold block mb-2">On Behalf Of</span>
+      <p-dropdown
+        [options]="profileTypes"
+        formControlName="onBehalfOf"
+        optionLabel="name"
+        placeholder="Select Profile"
+      />
+    </div>
+  
+    <div class="flex-auto">
+      <span class="font-bold block mb-2">User Name (Email ID)</span>
+      <input
+        type="text"
+        required
+        type="email"
+        pInputText
+        formControlName="email"
+      />
+    </div>
+  
+    <div class="flex-auto">
+      <span class="font-bold block mb-2">Bride/Groom Full Name</span>
+      <input type="text" pInputText formControlName="firstName" />
+    </div>
+  
+    <div class="flex-auto">
+      <span class="font-bold block mb-2">Bride/Groom Gender</span>
+      <div class="gender-container">
+        <div class="flex align-items-center">
+          <p-radioButton
+            name="gender"
+            value="Male"
+            formControlName="gender"
+            inputId="ingredient3"
+          />
+          <label for="ingredient3" class="ml-2"> Male </label>
+        </div>
+  
+        <div class="flex align-items-center">
+          <p-radioButton
+            name="gender"
+            value="Female"
+            formControlName="gender"
+            inputId="ingredient4"
+          />
+          <label for="ingredient4" class="ml-2"> Female </label>
+        </div>
       </div>
     </div>
-  </div>
+  
+    <div class="flex-auto">
+      <span class="font-bold block mb-2">Contact Phone</span>
+      <p-inputMask
+        mask="(999) 999-9999"
+        formControlName="mobile"
+        placeholder="(999) 999-9999"
+      />
+    </div>
 
-  <div class="flex-auto">
-    <span class="font-bold block mb-2">Contact Phone</span>
-    <p-inputMask
-      mask="(999) 999-9999"
-      formControlName="mobile"
-      placeholder="(999) 999-9999"
-    />
+    <div class="flex-auto">
+      <p-button label="Start Registration" [disabled]="initRegForm.invalid" icon="pi pi-arrow-right" iconPos="right" (onClick)="signIn()" />
+    </div>
   </div>
 </div>

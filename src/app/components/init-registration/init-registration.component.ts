@@ -5,6 +5,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { ProfileType } from '../../models/registration.model';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-init-registration',
@@ -14,7 +16,8 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
     InputTextModule,
     RadioButtonModule,
     InputMaskModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ButtonModule,
   ],
   templateUrl: './init-registration.component.html',
   styleUrl: './init-registration.component.scss',
@@ -25,7 +28,7 @@ export class InitRegistrationComponent {
     firstName: new FormControl('', Validators.required),
     mobile: new FormControl('', Validators.required),
     gender: new FormControl('', Validators.required),
-    email: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
   });
   profileTypes: ProfileType[] = [
     { name: 'My self', code: 'My self' },
@@ -37,4 +40,13 @@ export class InitRegistrationComponent {
     { name: 'Relative', code: 'Relative' },
     { name: 'Friend', code: 'Friend' },
   ];
+
+  constructor(private router: Router) {}
+
+  signIn() {
+    this.router.navigate([
+      '/registration',
+      { ...this.initRegForm.value, onBehalfOf: this.initRegForm.value.onBehalfOf.code },
+    ]);
+  }
 }

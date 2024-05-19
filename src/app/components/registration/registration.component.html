@@ -1,11 +1,13 @@
 <form action="" [formGroup]="userInfoForm">
+    <div>
+    <div>{{ this.userInfoForm.get('basicInfo')?.valid | json }}</div>
+        
+        {{ this.userInfoForm.get('basicInfo')?.value | json }}</div>
     <p-stepper>
         <p-stepperPanel header="Basic Info">
             <ng-template pTemplate="content" let-nextCallback="nextCallback" let-index="index">
                 <div class="flex flex-column">
-                    <!-- 
-                        BasicInfo component 
-                    -->
+                    <!-- BasicInfo component -->
                     <app-basic-info [userInfo]="userInfo" (lastElementBlur)="onLastElementBlur($event)"></app-basic-info>
                 </div>
                 <div class="flex pt-4 justify-content-end" #nextBtn>
