@@ -6,19 +6,25 @@ import { HelpComponent } from './components/help/help.component';
 import { SearchComponent } from './components/search/search.component';
 
 export const routes: Routes = [
-    {
-        path: '', component: HomeComponent, pathMatch: 'full'
-    },
-    {
-        path: 'registration', component: RegistrationComponent
-    },
-    {
-        path: 'signin', component: SigninComponent
-    },
-    {
-        path: 'help', component: HelpComponent
-    },
-    {
-        path: 'search', component: SearchComponent
-    },
+  {
+    path: '',
+    component: HomeComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'registration',
+    component: RegistrationComponent,
+  },
+  {
+    path: 'signin',
+    component: SigninComponent,
+  },
+  {
+    path: 'help',
+    component: HelpComponent,
+  },
+  {
+    path: 'search',
+    component: SearchComponent,
+  },
 ];

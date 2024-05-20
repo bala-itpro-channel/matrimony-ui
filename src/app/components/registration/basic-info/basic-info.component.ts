@@ -1,9 +1,11 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  ElementRef,
   EventEmitter,
   Input,
   Output,
+  ViewChild,
 } from '@angular/core';
 import {
   ControlContainer,
@@ -36,7 +38,7 @@ import { CommonModule } from '@angular/common';
     DropdownModule,
     RadioButtonModule,
     InputNumberModule,
-    CommonModule
+    CommonModule,
   ],
   templateUrl: './basic-info.component.html',
   styleUrl: './basic-info.component.scss',
@@ -46,6 +48,7 @@ import { CommonModule } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BasicInfoComponent {
+  @ViewChild('.p-inputtext', { read: ElementRef }) inputElm!: ElementRef;
   @Input() userInfo!: UserInfo;
   @Output() lastElementBlur = new EventEmitter<string>();
   childForm!: FormGroup;
@@ -88,7 +91,8 @@ export class BasicInfoComponent {
     { label: 'Pisces / மீனம்', value: 'Pisces' },
   ];
 
-  constructor(public parentForm: FormGroupDirective,
+  constructor(
+    public parentForm: FormGroupDirective,
     private router: ActivatedRoute
   ) {}
 
@@ -124,11 +128,12 @@ export class BasicInfoComponent {
         ),
         job: new FormControl(this.userInfo.job, Validators.required),
         income: new FormControl(this.userInfo.income, Validators.required),
-        education: new FormControl(
-          this.userInfo.education
-        ),
+        education: new FormControl(this.userInfo.education, Validators.required),
         gender: new FormControl(this.userInfo.gender, Validators.required),
       })
     );
+  }
+
+  ngAfterViewInit(): void {
   }
 }

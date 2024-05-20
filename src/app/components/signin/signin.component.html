@@ -11,6 +11,11 @@
       [toggleMask]="true"
     />
   </div>
+  @if (isInvalidCredential) {
+    <div class="error">
+      <span>Invalid credentials</span>
+    </div>
+  }
   <div class="flex-auto buttons">
     <div class="checkbox-container">
         <p-checkbox 

@@ -2,10 +2,6 @@
   formGroupName="basicInfo"
   class="container card p-fluid flex flex-wrap gap-3"
 >
-  <div>
-    {{ this.childForm.get('basicInfo')?.valid }}
-    {{ this.childForm.get('basicInfo')?.value | json }}
-  </div>
   <div class="flex-auto">
     <span class="font-bold block mb-2">On Behalf Of</span>
     <p-dropdown
@@ -122,6 +118,11 @@
       optionLabel="label"
       placeholder="Select Profile"
     />
+  </div>
+
+  <div class="flex-auto">
+    <span class="font-bold block mb-2">Education</span>
+    <input type="text" pInputText formControlName="education" />
   </div>
 
   <div class="flex-auto">

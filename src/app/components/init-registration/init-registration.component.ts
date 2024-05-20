@@ -6,7 +6,7 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { ProfileType } from '../../models/registration.model';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-init-registration',
@@ -18,6 +18,7 @@ import { Router } from '@angular/router';
     InputMaskModule,
     ReactiveFormsModule,
     ButtonModule,
+    RouterModule,
   ],
   templateUrl: './init-registration.component.html',
   styleUrl: './init-registration.component.scss',

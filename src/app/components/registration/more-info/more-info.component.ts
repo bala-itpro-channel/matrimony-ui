@@ -69,7 +69,7 @@ export class MoreInfoComponent {
           this.userInfo.marritalStatus,
           Validators.required
         ),
-        role: new FormControl('ROLE_USER')
+        roles: new FormControl('ROLE_USER')
       })
     );
   }

@@ -1,8 +1,4 @@
 <form action="" [formGroup]="userInfoForm">
-    <div>
-    <div>{{ this.userInfoForm.get('basicInfo')?.valid | json }}</div>
-        
-        {{ this.userInfoForm.get('basicInfo')?.value | json }}</div>
     <p-stepper>
         <p-stepperPanel header="Basic Info">
             <ng-template pTemplate="content" let-nextCallback="nextCallback" let-index="index">
@@ -11,7 +7,12 @@
                     <app-basic-info [userInfo]="userInfo" (lastElementBlur)="onLastElementBlur($event)"></app-basic-info>
                 </div>
                 <div class="flex pt-4 justify-content-end" #nextBtn>
-                    <p-button label="Next" icon="pi pi-arrow-right" iconPos="right" (onClick)="nextCallback.emit()" />
+                    <p-button 
+                        label="Next" 
+                        icon="pi pi-arrow-right" 
+                        iconPos="right"
+                        [disabled]="!this.userInfoForm.get('basicInfo')?.valid"
+                        (onClick)="nextCallback.emit()" />
                 </div>
             </ng-template>
         </p-stepperPanel>
@@ -23,8 +24,15 @@
                 </div>
                 <div class="flex pt-4 justify-content-between">
                     <p-button label="Back" icon="pi pi-arrow-left" (onClick)="prevCallback.emit()" />
-                    <p-button label="Next" icon="pi pi-arrow-right" iconPos="right" (onClick)="nextCallback.emit()" /></div
-            ></ng-template>
+                    <p-button 
+                        label="Next" 
+                        icon="pi pi-arrow-right" 
+                        iconPos="right" 
+                        [disabled]="!this.userInfoForm.get('moreInfo')?.valid"
+                        (onClick)="nextCallback.emit()" />
+                </div>
+                <div>{{ this.userInfoForm.get('moreInfo')?.value | json }}</div>
+            </ng-template>
         </p-stepperPanel>
         <p-stepperPanel header="Review">
             <ng-template pTemplate="content" let-prevCallback="prevCallback" let-index="index">
@@ -38,4 +46,3 @@
         </p-stepperPanel>
     </p-stepper>
 </form>
-<!-- <div>{{ userInfoForm.value | json }}</div> -->
