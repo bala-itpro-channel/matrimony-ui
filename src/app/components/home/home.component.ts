@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { InitRegistrationComponent } from '../init-registration/init-registration.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProfilesComponent } from '../profiles/profiles.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [InitRegistrationComponent],
+  imports: [InitRegistrationComponent, ProfilesComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
