@@ -33,6 +33,14 @@ export class ProfilesComponent {
   rows: number = 10;
   totalRecords = 0;
 
+  sortList: any[] | undefined = [
+    { name: 'Name', code: 'firstName' },
+    { name: 'Date of Birth', code: 'dob' },
+    { name: 'Gender', code: 'gender' },
+  ];
+
+  sortBy: any = { name: 'Name', code: 'firstname' };
+
   constructor(private service: ProfileService) {}
 
   ngOnInit(): void {
@@ -43,6 +51,10 @@ export class ProfilesComponent {
     this.first = event.first;
     this.rows = event.rows;
     this.getProfile(event.rows, event.page, 'firstName');
+  }
+
+  sortChanged() {
+    this.getProfile(this.rows, 0, this.sortBy?.code);
   }
 
   getProfile(rows: number, page: number, sortField: string) {
@@ -60,5 +72,9 @@ export class ProfilesComponent {
           console.log(err);
         },
       });
+  }
+
+  contactProfile(_t14: any) {
+    throw new Error('Method not implemented.');
   }
 }

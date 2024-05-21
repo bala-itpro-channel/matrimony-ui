@@ -1,5 +1,17 @@
+<div class="title flex">
+    <h4>Profile List</h4>
+    <div class="sortby">
+        <span>Sort By</span>
+        <p-dropdown 
+            [options]="sortList" 
+            [(ngModel)]="sortBy" 
+            (onChange)="sortChanged()"
+            optionLabel="name"
+            placeholder="Sort By" />
+    </div>
+</div>
 <div class="card">
-    <p-dataView #dv [value]="profiles" [rows]="50" [paginator]="false">
+    <p-dataView #dv [value]="profiles" [rows]="rows" [paginator]="false">
         <ng-template pTemplate="list" let-profiles>
             <div class="grid grid-nogutter">
                 <div class="col-12" *ngFor="let profile of profiles; let first = first" class="col-12">
@@ -7,7 +19,7 @@
                         <div class="md:w-10rem relative">
                             <img class="block xl:block mx-auto border-round w-full" [src]="profile.gender === 'Male' ? './../../../assets/images/boy.png' : './../../../assets/images/girl.png'" [alt]="profile.firstName" />
                         </div>
-                        <div class="flex flex-column md:flex-row justify-content-between md:align-items-center flex-1 gap-4">
+                        <div class="flex flex-column md:flex-row justify-content-between md:align-items-start flex-1 gap-4">
                             <div class="flex flex-row md:flex-column justify-content-between align-items-start gap-2">
                                 <div>
                                 <span class="font-medium text-secondary text-sm">{{ profile.gender }}</span>
@@ -20,24 +32,26 @@
                                 </div>
                             </div>
                             <div class="flex flex-column md:align-items-end gap-5">
-                                <span class="text-xl font-semibold text-900">{{ profile.details }}</span>
                                 <div class="flex flex-row-reverse md:flex-row gap-2">
                                     <p-button icon="pi pi-heart" [outlined]="true" />
-                                    <p-button icon="pi pi-shopping-cart" class="flex-auto md:flex-initial white-space-nowrap" label="Buy Now" />
+                                    <p-button icon="pi pi-phone" class="flex-auto md:flex-initial white-space-nowrap" label="Contact" (onClick)="contactProfile(profile)" />
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div style="padding: 24px; padding-top: 0;">
+                        <span class="text-sm">{{ profile.details }}</span>
                     </div>
                 </div>
             </div>
         </ng-template>
     </p-dataView>
     <div class="card flex justify-content-center">
-    <p-paginator 
-        (onPageChange)="onPageChange($event)" 
-        [first]="first" 
-        [rows]="rows" 
-        [totalRecords]="totalRecords" 
-        [rowsPerPageOptions]="[10, 20, 30]" />
-</div>
+        <p-paginator 
+            (onPageChange)="onPageChange($event)" 
+            [first]="first" 
+            [rows]="rows" 
+            [totalRecords]="totalRecords" 
+            [rowsPerPageOptions]="[5, 10, 20, 50, 100]" />
+    </div>
 </div>

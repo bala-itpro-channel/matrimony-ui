@@ -1,0 +1,25 @@
+:host ::ng-deep {
+    .p-dropdown {
+        min-width: 180px;
+    }
+}
+.title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #e06506;
+    color: white;
+    h4 {
+        margin: 0;
+    }
+
+    .sortby {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        justify-content: center;
+        flex-direction: row;
+    }
+}

@@ -1,3 +1,15 @@
+ToDo
+1. Details more length
+1.1 Details page view
+1.2 Add to Favourite
+2. Auto profile generation
+3. Image upload
+4. Filter 
+Sign out
+Hide Sign in and register if logged in
+Delete profile
+
+
 cypress
 @cypress/schematic
 
