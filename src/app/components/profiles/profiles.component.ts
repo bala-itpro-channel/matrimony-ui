@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { UserInfo } from '../../models/registration.model';
 import { ProfileService } from './profiles.service';
 import { take } from 'rxjs';
+import { UtilityService } from '../../utils/utility.service';
 interface PageEvent {
   first: number;
   rows: number;
@@ -41,7 +42,7 @@ export class ProfilesComponent {
 
   sortBy: any = { name: 'Name', code: 'firstname' };
 
-  constructor(private service: ProfileService) {}
+  constructor(private service: ProfileService, public utilityService: UtilityService) {}
 
   ngOnInit(): void {
     this.getProfile(this.rows, 0, 'firstName');

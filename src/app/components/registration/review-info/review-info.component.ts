@@ -54,6 +54,8 @@ export class ReviewInfoComponent {
       onBehalfOf: this.parentForm.form.value.basicInfo.onBehalfOf?.code || '',
       zodiac: this.parentForm.form.value.basicInfo.zodiac?.value || '',
       star: this.parentForm.form.value.basicInfo.star?.value || '',
+      createdDate: new Date(),
+      modifiedDate: new Date(),
     };
   }
 

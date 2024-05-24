@@ -34,4 +34,6 @@ export interface UserInfo {
 	details: string,
 	roles: string,
 	gender: string,
+	createdDate: string,
+	modifiedDate: string,
 }

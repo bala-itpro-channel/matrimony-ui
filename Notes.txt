@@ -1,13 +1,20 @@
 ToDo
+
+Hide Sign in and show Sign out if logged in
+Hide register and Show Edit profile if logged in
+Profile Created Date
+Profile Updated Date
+Redesign the Profile template with responsive design - Add More details 
+
 1. Details more length
 1.1 Details page view
 1.2 Add to Favourite
 2. Auto profile generation
 3. Image upload
+Edit Profile
+Add Last logged in
 4. Filter 
-Sign out
-Hide Sign in and register if logged in
-Delete profile
+Delete profile if logged in and collect the reason before delete it (Soft Delete)
 
 
 cypress

@@ -58,6 +58,9 @@ export class RegistrationComponent implements OnInit {
     height: '',
     details: '',
     mobile: '',
+    createdDate: '',
+    modifiedDate: '',
+
   };
 
   userInfoForm!: FormGroup;
