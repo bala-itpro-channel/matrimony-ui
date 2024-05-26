@@ -1,11 +1,12 @@
 <form [formGroup]="loginForm" autocomplete="off">
   <div class="flex-auto">
     <span class="font-bold block mb-2">Email</span>
-    <input autocomplete="off" type="text" pInputText formControlName="email" />
+    <input autocomplete="no" type="text" pInputText formControlName="email" />
   </div>
   <div class="flex-auto">
     <span class="font-bold block mb-2">Password</span>
     <p-password
+      autocomplete="no" 
       formControlName="password"
       [feedback]="false"
       [toggleMask]="true"

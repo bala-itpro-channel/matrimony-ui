@@ -29,6 +29,7 @@ import { SelectButtonModule } from 'primeng/selectbutton';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MoreInfoComponent {
+  selectedFile: File | undefined;
   @Input() userInfo!: UserInfo;
   childForm!: FormGroup;
 
@@ -46,7 +47,7 @@ export class MoreInfoComponent {
     { label: 'Divorced', value: 'Divorced' },
     { label: 'Awaiting divorce', value: 'Awaiting divorce' },
   ];
-  
+
   constructor(public parentForm: FormGroupDirective) {}
 
   ngOnInit(): void {
@@ -69,9 +70,14 @@ export class MoreInfoComponent {
           this.userInfo.marritalStatus,
           Validators.required
         ),
-        roles: new FormControl('ROLE_USER')
+        roles: new FormControl('ROLE_USER'),
       })
     );
+  }
+
+  public onFileChanged(event: any) {
+    //Select File
+    this.selectedFile = event.target.files[0];
   }
 }
 

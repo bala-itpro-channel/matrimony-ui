@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild, viewChild } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { UtilityService } from './utils/utility.service';
 import { CommonModule } from '@angular/common';
 
@@ -14,7 +14,7 @@ export class AppComponent {
   title = 'matrimony-app';
   @ViewChild('myTopnav', {read: ElementRef}) myTopnav!: ElementRef;
 
-  constructor(public utilService: UtilityService) {
+  constructor(public utilService: UtilityService, private router: Router) {
   }
 
   myFunction() {
@@ -24,5 +24,10 @@ export class AppComponent {
     } else {
       x!.className = 'topnav';
     }
+  }
+
+  signOut() {
+    localStorage.clear();
+    window.location.reload();
   }
 }
