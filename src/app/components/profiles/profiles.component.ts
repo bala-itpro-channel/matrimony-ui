@@ -8,6 +8,7 @@ import { UserInfo } from '../../models/registration.model';
 import { ProfileService } from './profiles.service';
 import { take } from 'rxjs';
 import { UtilityService } from '../../utils/utility.service';
+import { environment } from '../../../environments/environment';
 interface PageEvent {
   first: number;
   rows: number;
@@ -33,6 +34,7 @@ export class ProfilesComponent {
   first: number = 0;
   rows: number = 10;
   totalRecords = 0;
+  public baseUrl = environment.apiUrl;
 
   sortList: any[] | undefined = [
     { name: 'Name', code: 'firstName' },
@@ -42,7 +44,10 @@ export class ProfilesComponent {
 
   sortBy: any = { name: 'Name', code: 'firstname' };
 
-  constructor(private service: ProfileService, public utilityService: UtilityService) {}
+  constructor(
+    private service: ProfileService,
+    public utilityService: UtilityService
+  ) {}
 
   ngOnInit(): void {
     this.getProfile(this.rows, 0, 'firstName');

@@ -7,11 +7,16 @@
                     <app-basic-info [userInfo]="userInfo" (lastElementBlur)="onLastElementBlur($event)"></app-basic-info>
                 </div>
                 <div class="flex pt-4 justify-content-end" #nextBtn>
-                    <p-button 
+                    <!-- <p-button 
                         label="Next" 
                         icon="pi pi-arrow-right" 
                         iconPos="right"
                         [disabled]="!this.userInfoForm.get('basicInfo')?.valid"
+                        (onClick)="nextCallback.emit()" /> -->
+                    <p-button 
+                        label="Next" 
+                        icon="pi pi-arrow-right" 
+                        iconPos="right"
                         (onClick)="nextCallback.emit()" />
                 </div>
             </ng-template>
@@ -28,8 +33,14 @@
                         label="Next" 
                         icon="pi pi-arrow-right" 
                         iconPos="right" 
-                        [disabled]="!this.userInfoForm.get('moreInfo')?.valid"
+
                         (onClick)="nextCallback.emit()" />
+                    <!-- <p-button 
+                        label="Next" 
+                        icon="pi pi-arrow-right" 
+                        iconPos="right" 
+                        [disabled]="!this.userInfoForm.get('moreInfo')?.valid"
+                        (onClick)="nextCallback.emit()" /> -->
                 </div>
                 <div>{{ this.userInfoForm.get('moreInfo')?.value | json }}</div>
             </ng-template>

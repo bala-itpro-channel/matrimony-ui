@@ -29,7 +29,7 @@ export class ReviewInfoComponent {
 
   constructor(
     public parentForm: FormGroupDirective,
-    private server: RegistrationService,
+    private service: RegistrationService,
     private messageService: MessageService,
     private router: Router,
   ) {}
@@ -60,9 +60,10 @@ export class ReviewInfoComponent {
   }
 
   saveProfile() {
-    this.server.save(this.userInfo).subscribe({
+    this.service.save(this.userInfo).subscribe({
       next: (resp: any) => {
         console.log(resp);
+        console.log (this.service.imageFile?.name);
         this.showSuccess();
       },
       error: (error: any) => {

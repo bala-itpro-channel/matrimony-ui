@@ -16,6 +16,7 @@
             <div class="grid grid-nogutter">
                 <div *ngFor="let profile of profiles; let first = first" class="profile-container">
                     <div>
+                        <img src="{{ baseUrl + '/api/image/' + profile.id }}" />
                         <img class="block xl:block mx-auto border-round w-full" [src]="profile.gender === 'Male' ? './../../../assets/images/boy.png' : './../../../assets/images/girl.png'" [alt]="profile.firstName" />
                     </div>
                     <div>

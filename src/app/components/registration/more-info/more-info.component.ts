@@ -11,6 +11,7 @@ import { UserInfo } from '../../../models/registration.model';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { InputTextModule } from 'primeng/inputtext';
 import { SelectButtonModule } from 'primeng/selectbutton';
+import { RegistrationService } from '../registration.service';
 
 @Component({
   selector: 'app-more-info',
@@ -29,7 +30,7 @@ import { SelectButtonModule } from 'primeng/selectbutton';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MoreInfoComponent {
-  selectedFile: File | undefined;
+  selectedFile!: File;
   @Input() userInfo!: UserInfo;
   childForm!: FormGroup;
 
@@ -48,7 +49,7 @@ export class MoreInfoComponent {
     { label: 'Awaiting divorce', value: 'Awaiting divorce' },
   ];
 
-  constructor(public parentForm: FormGroupDirective) {}
+  constructor(public parentForm: FormGroupDirective, private service: RegistrationService) {}
 
   ngOnInit(): void {
     this.childForm = this.parentForm.form;
@@ -75,9 +76,12 @@ export class MoreInfoComponent {
     );
   }
 
-  public onFileChanged(event: any) {
-    //Select File
-    this.selectedFile = event.target.files[0];
+  public onFileChanged(event: Event) {
+    const element = event.currentTarget as HTMLInputElement;
+    if (element.files?.length) {
+      this.selectedFile = element.files[0];
+    }
+    this.service.imageFile = this.selectedFile;
   }
 }
 
