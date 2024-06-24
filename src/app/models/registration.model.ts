@@ -36,4 +36,5 @@ export interface UserInfo {
 	gender: string,
 	createdDate: string,
 	modifiedDate: string,
+	isFav?: boolean,
 }

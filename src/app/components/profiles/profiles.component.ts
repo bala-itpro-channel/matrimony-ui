@@ -6,7 +6,7 @@ import { ButtonModule } from 'primeng/button';
 import { CommonModule } from '@angular/common';
 import { UserInfo } from '../../models/registration.model';
 import { ProfileService } from './profiles.service';
-import { take } from 'rxjs';
+import { map, take } from 'rxjs';
 import { UtilityService } from '../../utils/utility.service';
 import { environment } from '../../../environments/environment';
 interface PageEvent {
@@ -66,7 +66,16 @@ export class ProfilesComponent {
   getProfile(rows: number, page: number, sortField: string) {
     this.service
       .getProfiles(rows, page, sortField)
-      .pipe(take(1))
+      .pipe(
+        take(1),
+        map((resp: any) => {
+          const content = resp?.content.map((r: UserInfo) =>{
+            r.isFav = false;
+            return r;
+          });
+          return { ...resp, content }
+        })
+      )
       .subscribe({
         next: (resp: any) => {
           this.paginationContent = resp;

@@ -2,6 +2,77 @@
     .p-dropdown {
         min-width: 180px;
     }
+    p-button {
+        border-radius: 5px;
+    }
+    button.p-button {
+        background: #1b5752;
+        border-color: #1b5752;
+        border-radius: 5px;
+        width: 100%;
+    }
+    button.p-button-outlined {
+        background: white;
+        border-color: white;
+        width: 100%;
+        border: 1px solid #1b5752;
+        padding: 12px 15px;
+    }
+    
+
+}
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .fav-img {
+        width: 30px;
+        height: 30px;
+    }
+    .buttons {
+        align-items: center;
+    }
+    .part1-image {
+        display: flex;
+        justify-content: space-around;
+        button.p-button.contact {
+            background: red !important;
+        }
+        @media screen and (max-width: 600px) {
+            flex-direction: column;
+            img { 
+                object-fit: contain;
+            }
+        }
+        .contact {
+            background: #2d8981;
+        }
+        .part2 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .details-attributes {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .details {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+    img {
+        height: 250px;
+        width: 250px !important;
+        object-fit: contain;
+    }
 }
 .title {
     display: flex;
@@ -23,3 +94,4 @@
         flex-direction: row;
     }
 }
+

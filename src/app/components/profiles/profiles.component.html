@@ -14,37 +14,45 @@
     <p-dataView #dv [value]="profiles" [rows]="rows" [paginator]="false">
         <ng-template pTemplate="list" let-profiles>
             <div class="grid grid-nogutter">
-                <div *ngFor="let profile of profiles; let first = first" class="profile-container">
-                    <div>
-                        <img src="{{ baseUrl + '/api/image/' + profile.id }}" />
-                        <img class="block xl:block mx-auto border-round w-full" [src]="profile.gender === 'Male' ? './../../../assets/images/boy.png' : './../../../assets/images/girl.png'" [alt]="profile.firstName" />
-                    </div>
-                    <div>
-                        <div></div>
-                        <div></div>
-                    </div>
-
-                    <div class="flex flex-column sm:flex-row sm:align-items-center p-4 gap-3" [ngClass]="{ 'border-top-1 surface-border': !first }">
-                        <div class="md:w-10rem relative">
-                            
+                <div *ngFor="let profile of profiles; let first = first" class="profile-container" [ngClass]="{ 'border-top-1 surface-border': !first }">
+                    <div class="part1-image">
+                        <div>
+                            <!-- <img src="{{ baseUrl + '/api/image/' + profile.id }}" /> -->
+                            <img class="block xl:block mx-auto border-round w-full" [src]="profile.gender === 'Male' ? './../../../assets/images/boy.png' : './../../../assets/images/girl.png'" [alt]="profile.firstName" />
                         </div>
-                        <div class="flex flex-column md:flex-row justify-content-between md:align-items-start flex-1 gap-4">
-                            <div class="flex flex-row md:flex-column justify-content-between align-items-start gap-2">
-                                <div>
-                                <span class="font-medium text-secondary text-sm">{{ profile.gender }}</span>
-                                    <div class="text-lg font-medium text-900 mt-2">{{ profile.firstName }}</div>
+                        <div class="flex p-4 gap-3 part2">
+                            <div class="flex flex-column md:flex-row justify-content-between md:align-items-start flex-1 gap-4">
+                                <div class="flex flex-row md:flex-column justify-content-between align-items-start gap-2">
+                                    <div>
+                                        <span class="font-medium text-secondary text-sm">{{ profile.gender }}</span>
+                                        <div class="text-lg font-medium text-900 mt-2">{{ profile.firstName }}</div>
+                                    </div>
+                                    <div class="surface-100 p-1" style="border-radius: 30px">
+                                        <div class="surface-0 flex align-items-center gap-2 justify-content-center py-1 px-2" style="border-radius: 30px; box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.04), 0px 1px 2px 0px rgba(0, 0, 0, 0.06)">
+                                            Age: &nbsp;<span class="text-900 font-medium text-sm">{{ utilityService.calAge(profile.dob, false) }}</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="surface-100 p-1" style="border-radius: 30px">
-                                    <div class="surface-0 flex align-items-center gap-2 justify-content-center py-1 px-2" style="border-radius: 30px; box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.04), 0px 1px 2px 0px rgba(0, 0, 0, 0.06)">
-                                        Age: &nbsp;<span class="text-900 font-medium text-sm">{{ utilityService.calAge('2020-03-03', false) }}</span>
+                                
+                                <div class="flex flex-column md:align-items-end gap-5">
+                                    <div class="flex flex-row-reverse md:flex-row gap-2 buttons">
+                                        <img 
+                                            [src]="profile.isFav ? './../../../assets/images/heart.svg' : './../../../assets/images/heart-outline.svg'" 
+                                            alt="" 
+                                            (click)="profile.isFav = !profile.isFav"
+                                            class="fav-img">
+                                        <p-button icon="pi pi-phone" class="flex-auto md:flex-initial white-space-nowrap contact" label="Contact" (onClick)="contactProfile(profile)" />
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex flex-column md:align-items-end gap-5">
-                                <div class="flex flex-row-reverse md:flex-row gap-2">
-                                    <p-button icon="pi pi-heart" [outlined]="true" />
-                                    <p-button icon="pi pi-phone" class="flex-auto md:flex-initial white-space-nowrap" label="Contact" (onClick)="contactProfile(profile)" />
-                                </div>
+                            <div class="details-attributes">
+                                <div>Height: {{profile.height}} Cms</div>
+                                <div>On behalf of: {{profile.onBehalfOf}}</div>
+                                <div>Job: {{profile.job}}</div>
+                                <div>Job: {{profile.income}}</div>
+                            </div>
+                            <div class="details">
+                                {{ profile.details }}
                             </div>
                         </div>
                     </div>
