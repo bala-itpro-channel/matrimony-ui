@@ -23,8 +23,13 @@
 }
 .profile-container {
     display: flex;
-    flex-direction: column;
     width: 100%;
+    .sub-title {
+      font-weight: 600;
+    }
+    .sub-text {
+      padding-left: 10px;
+    }
     .fav-img {
         width: 30px;
         height: 30px;
@@ -51,7 +56,6 @@
             display: flex;
             flex-direction: column;
         }
-
         .details-attributes {
             width: 100%;
             display: flex;
@@ -68,7 +72,7 @@
             text-overflow: ellipsis;
         }
     }
-    img {
+    img.profile {
         height: 250px;
         width: 250px !important;
         object-fit: contain;

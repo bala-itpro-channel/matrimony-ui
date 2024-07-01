@@ -1,7 +1,11 @@
 ToDo
 
-Hide Sign in and show Sign out if logged in
-Hide register and Show Edit profile if logged in
+Done - In large screens the Registration screen form fields wraps
+Done - User profile list page in different resolution
+Detailed page
+Liked profile - local storage
+
+Hide register and Show My profile if logged in
 Profile Created Date
 Profile Updated Date
 Redesign the Profile template with responsive design - Add More details 

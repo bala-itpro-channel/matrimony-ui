@@ -18,7 +18,7 @@
                     <div class="part1-image">
                         <div>
                             <!-- <img src="{{ baseUrl + '/api/image/' + profile.id }}" /> -->
-                            <img class="block xl:block mx-auto border-round w-full" [src]="profile.gender === 'Male' ? './../../../assets/images/boy.png' : './../../../assets/images/girl.png'" [alt]="profile.firstName" />
+                            <img class="block xl:block mx-auto border-round w-full profile" [src]="profile.gender === 'Male' ? './../../../assets/images/boy.png' : './../../../assets/images/girl.png'" [alt]="profile.firstName" />
                         </div>
                         <div class="flex p-4 gap-3 part2">
                             <div class="flex flex-column md:flex-row justify-content-between md:align-items-start flex-1 gap-4">
@@ -46,10 +46,10 @@
                                 </div>
                             </div>
                             <div class="details-attributes">
-                                <div>Height: {{profile.height}} Cms</div>
-                                <div>On behalf of: {{profile.onBehalfOf}}</div>
-                                <div>Job: {{profile.job}}</div>
-                                <div>Job: {{profile.income}}</div>
+                                <div><span class="sub-title">Height:</span><span class="sub-text">{{profile.height}} Cms</span></div>
+                                <div><span class="sub-title">On behalf of:</span><span class="sub-text">{{profile.onBehalfOf}}</span></div>
+                                <div><span class="sub-title">Job Title:</span><span class="sub-text">{{profile.job}}</span></div>
+                                <div><span class="sub-title">Income:</span><span class="sub-text">{{profile.income}}</span></div>
                             </div>
                             <div class="details">
                                 {{ profile.details }}
